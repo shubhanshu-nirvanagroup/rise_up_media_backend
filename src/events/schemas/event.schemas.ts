@@ -1,11 +1,18 @@
+import { Field, ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { HydratedDocument } from 'mongoose';
+
+export type EventDocument = HydratedDocument<Event>;
 
 @Schema()
-export class Event extends Document {
+@ObjectType()
+export class Event {
+
+  @Field()
   @Prop()
   title: string;
 
+  @Field()
   @Prop()
   description: string;
 }

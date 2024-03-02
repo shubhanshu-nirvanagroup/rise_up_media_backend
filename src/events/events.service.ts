@@ -6,6 +6,7 @@ import { Model } from "mongoose";
 
 @Injectable()
 export class EventsService {
+    
     constructor(@InjectModel('Event') private readonly eventModel: Model<Event>) {}
 
     async findAll():Promise<Event[]>{

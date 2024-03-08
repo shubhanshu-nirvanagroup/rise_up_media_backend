@@ -3,10 +3,12 @@
 # ------------------------------------------------------
 
 type Event {
+  id: Float!
   title: String!
   description: String!
 }
 
 type Query {
-  findAll: [Event!]!
+  events: [Event!]!
+  eventById(id: Float!): Event!
 }

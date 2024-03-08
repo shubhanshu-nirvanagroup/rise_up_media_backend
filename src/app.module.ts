@@ -7,13 +7,15 @@ import {GraphQLModule} from "@nestjs/graphql"
 import { join } from 'path';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
+
 @Module({
   imports: [MongooseModule.forRoot('mongodb://localhost:27017/riseUpMedia'),
   GraphQLModule.forRoot<ApolloDriverConfig>({
     driver: ApolloDriver,
     autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
   }),  
-EventsModule],
+  EventsModule,
+],
   controllers: [AppController],
   providers: [AppService],
 })

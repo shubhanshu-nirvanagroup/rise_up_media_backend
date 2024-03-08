@@ -10,6 +10,10 @@ export class Event {
 
   @Field()
   @Prop()
+  id:number;
+
+  @Field()
+  @Prop()
   title: string;
 
   @Field()
